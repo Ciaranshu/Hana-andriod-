@@ -168,4 +168,9 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_finish">finish</string>
+    <string name="title_activity_unfinish">unfinish</string>
+    <string name="title_activity_tab">Tab</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tad">Tad</string>
 </resources>
