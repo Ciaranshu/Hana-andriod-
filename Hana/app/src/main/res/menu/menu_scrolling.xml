@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.ciranshu.hana.ScrollingActivity">
     <item
-        android:id="@+id/back"
+        android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="返回"
+        android:title="@string/action_settings"
         app:showAsAction="never" />
 </menu>
