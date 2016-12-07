@@ -20,15 +20,6 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btn1_1=(Button)findViewById(R.id.Btn1_1);
-        Button btn1_2=(Button)findViewById(R.id.Btn1_2);
-        Button btn1_3=(Button)findViewById(R.id.Btn1_3);
-        Button btn1_4=(Button)findViewById(R.id.Btn1_4);
-        Button btn1_5=(Button)findViewById(R.id.Btn1_5);
-        Button btn1_6=(Button)findViewById(R.id.Btn1_6);
-        Button btn1_7=(Button)findViewById(R.id.Btn1_7);
-        Button btn1_8=(Button)findViewById(R.id.Btn1_8);
-        Button btn1_9=(Button)findViewById(R.id.Btn1_9);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
