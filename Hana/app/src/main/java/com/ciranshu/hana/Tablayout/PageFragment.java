@@ -2,6 +2,7 @@ package com.ciranshu.hana.Tablayout;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,10 +34,23 @@ public class PageFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_page, container, false);
+        View view = inflater.inflate(R.layout.inside, container, false);
+        if(mPage==1)
+        {
+           view = inflater.inflate(R.layout.inside, container, false);
+
+        }
+        else if(mPage==2)
+        {
+           view = inflater.inflate(R.layout.outside, container, false);
+
+        }
+
+        return view;
+       /* View view = inflater.inflate(R.layout.fragment_page, container, false);
         TextView textView = (TextView) view;
         textView.setText("Fragment #" + mPage);
-        return view;
+        return view;*/
     }
 
 }
