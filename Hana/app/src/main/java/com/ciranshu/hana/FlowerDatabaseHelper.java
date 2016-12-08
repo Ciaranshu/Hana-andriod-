@@ -23,6 +23,9 @@ public class FlowerDatabaseHelper extends SQLiteOpenHelper{
             + "category_name text, "
             + "category_code integer)";
 
+    //table name (Category) should be input
+    //db name is from user name
+
     private Context mContext;
 
     public FlowerDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
@@ -39,7 +42,7 @@ public class FlowerDatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("drop table if exists Book");
+        db.execSQL("drop table if exists Flower");
         db.execSQL("drop table if exists Category");
         onCreate(db);
     }
