@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.imformation) {
-            Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+            Intent intent=new Intent(MainActivity.this,PersonInfoActivity.class);
             startActivity(intent);
         } else if (id == R.id.unfinishbutton) {
 
