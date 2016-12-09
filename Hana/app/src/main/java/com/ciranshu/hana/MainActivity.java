@@ -107,9 +107,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.imformation) {
             Intent intent=new Intent(MainActivity.this,PersonInfoActivity.class);
             startActivity(intent);
-        } else if (id == R.id.unfinishbutton) {
-
-        } else if (id == R.id.finishbutton) {
+        }  else if (id == R.id.finishbutton) {
             Intent intent=new Intent(MainActivity.this,ScrollingActivity.class);
             startActivity(intent);
         } else if (id == R.id.Set) {

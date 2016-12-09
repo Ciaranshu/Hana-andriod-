@@ -63,6 +63,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +85,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     return true;
                 }
                 return false;
+            }
+        });
+            Button registerButton = (Button)findViewById(R.id.RegisterButton);
+            registerButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -340,6 +352,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
 
             // TODO: register the new account here.
+            Snackbar.make(mLoginFormView, "Authentic Wrong", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
             return true;
         }
 

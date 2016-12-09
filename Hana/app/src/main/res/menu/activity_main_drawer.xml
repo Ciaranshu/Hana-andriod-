@@ -9,13 +9,9 @@
 
 
     <item
-        android:id="@+id/unfinishbutton"
-        android:icon="@drawable/ic_menu_share"
-        android:title="进行中" />
-    <item
         android:id="@+id/finishbutton"
         android:icon="@drawable/ic_menu_send"
-        android:title="已完成" />
+        android:title="已完成事项" />
 
     <item
         android:id="@+id/Set"
