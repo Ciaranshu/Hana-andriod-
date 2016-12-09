@@ -22,6 +22,9 @@ public class PageFragment extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
     private ImageButton flower1;
+
+    private ImageButton btn1;
+
     public static PageFragment newInstance(int page) {
 
         Bundle args = new Bundle();
@@ -46,7 +49,13 @@ public class PageFragment extends Fragment {
         if(mPage==1)
         {
            view = inflater.inflate(R.layout.inside, container, false);
-            //flower1 = (ImageButton)findViewById(R.id.imageButton1);
+            btn1 = (ImageButton)view.findViewById(R.id.Btn1);
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog();
+                }
+        });
         }
         else if (mPage == 2) {
 
@@ -70,11 +79,11 @@ public class PageFragment extends Fragment {
 
     protected void dialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("你离散会挂吗？");
+        builder.setMessage("你是智障吗？");
 
         builder.setTitle("Warning");
 
-        builder.setPositiveButton("会", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("是", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -84,7 +93,7 @@ public class PageFragment extends Fragment {
             }
         });
 
-        builder.setNegativeButton("会", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("是", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {

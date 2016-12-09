@@ -1,10 +1,13 @@
 package com.ciranshu.hana;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 //替换为转到设定任务窗口
+                showInfoDialog();
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
@@ -103,9 +107,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.imformation) {
             Intent intent=new Intent(MainActivity.this,PersonInfoActivity.class);
             startActivity(intent);
-        } else if (id == R.id.unfinishbutton) {
-
-        } else if (id == R.id.finishbutton) {
+        }  else if (id == R.id.finishbutton) {
             Intent intent=new Intent(MainActivity.this,ScrollingActivity.class);
             startActivity(intent);
         } else if (id == R.id.Set) {
@@ -120,6 +122,20 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-
+    public void showInfoDialog()
+    {
+        LayoutInflater layoutInflater = this.getLayoutInflater();
+        View customDialog = layoutInflater.inflate(R.layout.relogwx, null);
+        final Dialog dialog = new AlertDialog.Builder(this).create();
+        dialog.show();
+        dialog.getWindow().setContentView(customDialog);
+        dialog.setCanceledOnTouchOutside(false);
+        customDialog.findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+    }
 
 }
