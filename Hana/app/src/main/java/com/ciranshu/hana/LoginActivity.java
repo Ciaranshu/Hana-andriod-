@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -39,7 +40,13 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
-
+    private static final String DB_FILE = "users.db",DB_TABLE = "users";
+    private SQLiteDatabase mUserDbRW;
+    protected void onDestroy(){
+        //
+        super.onDestroy();
+        mUserDbRW.close();
+    }
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -75,6 +82,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
+        UserDatabaseHelper friDbHp = new UserDatabaseHelper(getApplicationContext(),DB_FILE, null,1);
+
+        friDbHp.sCreateTableCommand = "CREATE TABLE "+DB_TABLE+" ("+
+                "id integer primary key autoincrement, "+
+                "name TEXT NOT NULL, "+
+                "username TEXT NOT NULL, "+
+                "password TEXT, "+
+                "age INTEGER)";
+
+        mUserDbRW = friDbHp.getWritableDatabase();
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -216,11 +233,32 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
+//        Cursor c = null;
+//
+//        c = mUserDbRW.query(true, DB_TABLE, new String[]{
+//                "username","password"
+//        },"username="+"\""+email+"\"", null,null,null,null,null);
+
+//        if (c == null)
+//            return false;
+//        c.moveToFirst();
+//        if (email == c.getString(0))
+//            return email.contains("@");
+
         return email.contains("@");
     }
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
+//        Cursor c = null;
+//        if(password.isEmpty()==false){
+//            c = mUserDbRW.query(true, DB_TABLE, new String[]{
+//                    "username","password"
+//            },"password="+password, null,null,null,null,null);
+//        }
+//        if (c == null)
+//            return false;
+//        c.moveToFirst();
         return password.length() > 4;
     }
 
