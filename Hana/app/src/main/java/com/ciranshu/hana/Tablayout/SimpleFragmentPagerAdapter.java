@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 2;
-    private String tabTitles[] = new String[]{"已完成","未完成"};
+    private String tabTitles[] = new String[]{"未完成","已完成"};
     private Context context;
 
     public SimpleFragmentPagerAdapter(FragmentManager fm,Context context) {
