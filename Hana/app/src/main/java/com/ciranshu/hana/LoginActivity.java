@@ -21,6 +21,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -56,9 +57,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "cscshu@outlook.com:hello", "bar@example.com:world"
-    };
+//    private static final String[] DUMMY_CREDENTIALS = new String[]{
+//            "cscshu@outlook.com:hello", "bar@example.com:world"
+//    };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -71,7 +72,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
 
 
-
+    private List<String>DUMMY_CREDENTIALS = new ArrayList<String>();
 
 
     @Override
@@ -92,6 +93,23 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 "age INTEGER)";
 
         mUserDbRW = friDbHp.getWritableDatabase();
+        //Log.e("LoginActivity", "succeseful");
+
+        Cursor c = null;
+
+        c = mUserDbRW.query(true, DB_TABLE, new String[]{
+                "username","password"
+        },null, null,null,null,null,null);
+
+
+        DUMMY_CREDENTIALS.add("bar@example.com:world");
+        DUMMY_CREDENTIALS.add("cscshu@outlook.com:hello");
+        c.moveToFirst();
+        DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
+        while(c.moveToNext()){
+            DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
+        }
+
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
