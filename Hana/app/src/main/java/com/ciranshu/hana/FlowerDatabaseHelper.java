@@ -13,16 +13,15 @@ public class FlowerDatabaseHelper extends SQLiteOpenHelper{
             + "id integer primary key autoincrement, "
             + "name text, "
             + "year integer, "
-            + "month integer"
-            + "day integer"
-            + "pages integer, "
-            + "name text)";
-
-    public static final String CREATE_CATEGORY = "create table Category ("
-            + "id integer primary key autoincrement, "
-            + "category_name text, "
-            + "category_code integer)";
-
+            + "month integer, "
+            + "day integer, "
+            + "hour integer, "
+            + "minute integer, "
+            + "second integer, "
+            + "frequency integer, "
+            + "lastDays integer, "
+            + "is_finished integer, "
+            + "Description text)";
     //table name (Category) should be input
     //db name is from user name
 
@@ -35,15 +34,14 @@ public class FlowerDatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
-     //   db.execSQL(CREATE_BOOK);
-        db.execSQL(CREATE_CATEGORY);
+        //   db.execSQL(CREATE_BOOK);
+        db.execSQL(CREATE_FLOWER);
         Toast.makeText(mContext, "Create succeed", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         db.execSQL("drop table if exists Flower");
-        db.execSQL("drop table if exists Category");
         onCreate(db);
     }
 }
