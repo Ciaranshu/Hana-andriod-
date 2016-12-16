@@ -60,7 +60,7 @@
         android:background="#00000000"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/delete"
-        android:id="@+id/delete"
+        android:id="@+id/delete_2"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/Checkable"
         android:layout_toStartOf="@+id/Checkable" />
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/name" />
+        android:id="@+id/name_2" />
 
     <TextView
         android:text="TextView"
@@ -79,6 +79,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Checkable"
         android:layout_marginTop="15dp"
-        android:id="@+id/Des" />
+        android:id="@+id/des_2" />
 
 </RelativeLayout>

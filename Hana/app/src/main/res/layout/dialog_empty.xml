@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Project name"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/name_1"
+            android:layout_height="wrap_content"/>
+            <!--android:hint="Input the project name"-->
+
+    </TableRow>
+
+ <!--   <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Days"
+            android:gravity="center"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/day_1"
+
+            />
+            &lt;!&ndash;android:hint="Input the length"&ndash;&gt;
+
+    </TableRow>-->
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Days"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/day_1"
+            android:layout_height="wrap_content"/>
+            <!--android:hint="Input the frequency"-->
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/des_1"
+            android:layout_height="wrap_content"/>
+           <!-- android:hint="Input the discription"-->
+    </TableRow>
+<LinearLayout android:weightSum="2">
+    <Button
+        android:id="@+id/btnConfirm"
+        android:text="Confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnCancle"
+        android:text="Cancle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+</LinearLayout>
+</TableLayout>

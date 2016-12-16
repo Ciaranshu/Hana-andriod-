@@ -104,12 +104,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         DUMMY_CREDENTIALS.add("bar@example.com:world");
         DUMMY_CREDENTIALS.add("cscshu@outlook.com:hello");
+//
         c.moveToFirst();
-        DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
-        while(c.moveToNext()){
-            DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
-        }
-
+//        DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
+//        while(c.moveToNext()){
+//            DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
+//        }
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
