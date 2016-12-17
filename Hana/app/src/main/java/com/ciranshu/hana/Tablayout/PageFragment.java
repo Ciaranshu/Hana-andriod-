@@ -544,6 +544,183 @@ public class PageFragment extends Fragment {
                 } while(cursor.moveToNext());
             }
             cursor.close();
+
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+             fdb = fdbHelper.getWritableDatabase();
+            cursor = fdb.query("Flower", null, "id = ?",
+                    new String[]{"2"}, null, null, null);
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject2 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays2 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays2 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate2.getTime();
+                    newdate2.set(Calendar.YEAR, year);
+                    newdate2.set(Calendar.MONTH, month);
+                    newdate2.set(Calendar.DAY_OF_MONTH, day);
+                    state2 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    description2 = cursor.getString(cursor.getColumnIndex("description"));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+            fdb = fdbHelper.getWritableDatabase();
+            cursor = fdb.query("Flower", null, "id = ?",
+                    new String[]{"3"}, null, null, null);
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject3 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays3 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays3 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate3.getTime();
+                    newdate3.set(Calendar.YEAR, year);
+                    newdate3.set(Calendar.MONTH, month);
+                    newdate3.set(Calendar.DAY_OF_MONTH, day);
+                    state3 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    description3 = cursor.getString(cursor.getColumnIndex("description"));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+            fdb = fdbHelper.getWritableDatabase();
+            cursor = fdb.query("Flower", null, "id = ?",
+                    new String[]{"4"}, null, null, null);
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject4 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays4 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays4 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate4.getTime();
+                    newdate4.set(Calendar.YEAR, year);
+                    newdate4.set(Calendar.MONTH, month);
+                    newdate4.set(Calendar.DAY_OF_MONTH, day);
+                    state4 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    description4 = cursor.getString(cursor.getColumnIndex("description"));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+            fdb = fdbHelper.getWritableDatabase();
+            cursor = fdb.query("Flower", null, "id = ?",
+                    new String[]{"5"}, null, null, null);
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject5 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays5 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays5 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate5.getTime();
+                    newdate5.set(Calendar.YEAR, year);
+                    newdate5.set(Calendar.MONTH, month);
+                    newdate5.set(Calendar.DAY_OF_MONTH, day);
+                    state5 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    description5 = cursor.getString(cursor.getColumnIndex("description"));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+            fdb = fdbHelper.getWritableDatabase();
+            cursor = fdb.query("Flower", null, "id = ?",
+                    new String[]{"6"}, null, null, null);
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject6 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays6 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays6 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate6.getTime();
+                    newdate6.set(Calendar.YEAR, year);
+                    newdate6.set(Calendar.MONTH, month);
+                    newdate6.set(Calendar.DAY_OF_MONTH, day);
+                    state6 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    description6 = cursor.getString(cursor.getColumnIndex("description"));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+            fdb = fdbHelper.getWritableDatabase();
+            cursor = fdb.query("Flower", null, "id = ?",
+                    new String[]{"7"}, null, null, null);
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject7 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays7 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays7 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate7.getTime();
+                    newdate7.set(Calendar.YEAR, year);
+                    newdate7.set(Calendar.MONTH, month);
+                    newdate7.set(Calendar.DAY_OF_MONTH, day);
+                    state7 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    description7 = cursor.getString(cursor.getColumnIndex("description"));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+            fdb = fdbHelper.getWritableDatabase();
+            cursor = fdb.query("Flower", null, "id = ?",
+                    new String[]{"8"}, null, null, null);
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject8 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays8 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays8 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate8.getTime();
+                    newdate8.set(Calendar.YEAR, year);
+                    newdate8.set(Calendar.MONTH, month);
+                    newdate8.set(Calendar.DAY_OF_MONTH, day);
+                    state8 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    description8 = cursor.getString(cursor.getColumnIndex("description"));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+            fdb = fdbHelper.getWritableDatabase();
+            cursor = fdb.query("Flower", null, "id = ?",
+                    new String[]{"9"}, null, null, null);
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject9 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays9 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays9 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate9.getTime();
+                    newdate9.set(Calendar.YEAR, year);
+                    newdate9.set(Calendar.MONTH, month);
+                    newdate9.set(Calendar.DAY_OF_MONTH, day);
+                    state9 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    description9 = cursor.getString(cursor.getColumnIndex("description"));
+                } while(cursor.moveToNext());
+            }
+            cursor.close();
+
             //第1个按钮
             if(state1==INUSE)
             {
@@ -597,7 +774,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate1,state1,nameofproject1,description1, needdays1,nowdays1);
+                            dialogInuse(1,newdate1,state1,nameofproject1,description1, needdays1,nowdays1);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -652,7 +829,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate2,state2,nameofproject2,description2, needdays2,nowdays2);
+                            dialogInuse(2,newdate2,state2,nameofproject2,description2, needdays2,nowdays2);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -706,7 +883,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate3,state3,nameofproject3,description3, needdays3,nowdays3);
+                            dialogInuse(3,newdate3,state3,nameofproject3,description3, needdays3,nowdays3);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -761,7 +938,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate4,state4,nameofproject4,description4, needdays4,nowdays4);
+                            dialogInuse(4,newdate4,state4,nameofproject4,description4, needdays4,nowdays4);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -816,7 +993,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate5,state5,nameofproject5,description5, needdays5,nowdays5);
+                            dialogInuse(5,newdate5,state5,nameofproject5,description5, needdays5,nowdays5);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -871,7 +1048,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate6,state6,nameofproject6,description6, needdays6,nowdays6);
+                            dialogInuse(7,newdate6,state6,nameofproject6,description6, needdays6,nowdays6);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -926,7 +1103,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate7,state7,nameofproject7,description7, needdays7,nowdays7);
+                            dialogInuse(7,newdate7,state7,nameofproject7,description7, needdays7,nowdays7);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -981,7 +1158,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate8,state8,nameofproject8,description8, needdays8,nowdays8);
+                            dialogInuse(8,newdate8,state8,nameofproject8,description8, needdays8,nowdays8);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -1036,7 +1213,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate9,state9,nameofproject9,description9, needdays9,nowdays9);
+                            dialogInuse(9,newdate9,state9,nameofproject9,description9, needdays9,nowdays9);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -1147,7 +1324,7 @@ public class PageFragment extends Fragment {
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void dialogInuse(Calendar newdate, int State, String nameofproject,
+    public void dialogInuse(int id,Calendar newdate, int State, String nameofproject,
                             String description, int needdays, int nowdays) {
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
         final View customDialog = layoutInflater.inflate(R.layout.dialog_inuse, null);
