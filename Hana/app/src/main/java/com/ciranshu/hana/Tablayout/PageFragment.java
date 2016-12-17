@@ -13,6 +13,7 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -176,6 +177,7 @@ public class PageFragment extends Fragment {
                     newdate1.set(Calendar.MONTH, month);
                     newdate1.set(Calendar.DAY_OF_MONTH, day);
                     state1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                    Log.d("Hello", "nameofproject1 is " + nameofproject1);
                 } while(cursor.moveToNext());
             }
             cursor.close();

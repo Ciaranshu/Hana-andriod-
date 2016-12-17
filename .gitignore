@@ -102,3 +102,5 @@ Hana/.idea/compiler.xml
 *.xml
 *.xml
 *.xml
+*.xml
+Hana/app/src/main/java/com/ciranshu/hana/ScrollingActivity.java
