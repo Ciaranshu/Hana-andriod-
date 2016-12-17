@@ -163,19 +163,20 @@ public class PageFragment extends Fragment {
             SQLiteDatabase fdb = fdbHelper.getWritableDatabase();
             Cursor cursor = fdb.query("Flower", new String[]{"id"}, "id = ?",
                     new String[]{"1"}, null, null, null);
-            if (cursor!=null){
-                nameofproject1 = cursor.getString(cursor.getColumnIndex("name"));
-                needdays1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
-                nowdays1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
-                int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
-                int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
-                int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
-                newdate1.getTime();
-                newdate1.set(Calendar.YEAR,year);
-                newdate1.set(Calendar.MONTH,month);
-                newdate1.set(Calendar.DAY_OF_MONTH,day);
-                state1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
-//                }while(cursor.moveToNext());
+            if (cursor.moveToFirst()){
+                do {
+                    nameofproject1 = cursor.getString(cursor.getColumnIndex("name"));
+                    needdays1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                    nowdays1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                    int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                    int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                    int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                    newdate1.getTime();
+                    newdate1.set(Calendar.YEAR, year);
+                    newdate1.set(Calendar.MONTH, month);
+                    newdate1.set(Calendar.DAY_OF_MONTH, day);
+                    state1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+                } while(cursor.moveToNext());
             }
             cursor.close();
             //第1个按钮
