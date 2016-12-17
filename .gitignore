@@ -105,5 +105,11 @@ Hana/.idea/inspectionProfiles/Project_Default.xml
 *.xml
 *.xml
 *.xml
+<<<<<<< HEAD
 >>>>>>> 46d36269f6b98c033870352e676873df7800cd21
+Hana/.idea/inspectionProfiles/Project_Default.xml
+=======
+*.xml
+Hana/app/src/main/java/com/ciranshu/hana/ScrollingActivity.java
+>>>>>>> origin/develop
 Hana/.idea/inspectionProfiles/Project_Default.xml

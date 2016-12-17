@@ -1,5 +1,6 @@
 package com.ciranshu.hana;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -79,6 +80,30 @@ public class FlowerDatabaseHelper extends SQLiteOpenHelper{
         db.execSQL(CREATE_FLOWER_NOTE_8);
         db.execSQL(CREATE_FLOWER_NOTE_9);
         Toast.makeText(mContext, "Create succeed", Toast.LENGTH_SHORT).show();
+
+        ContentValues values = new ContentValues();
+        values.put("id", 0);
+        values.put("name", "ad");
+        values.put("year", 100);
+        values.put("month", 2);
+        values.put("day", 10);
+        values.put("needDays", 30);
+        values.put("nowDays", 20);
+        values.put("is_finished", 0);
+        db.insert("Flower", null, values);
+
+        values.clear();
+        values.put("id", 0);
+        values.put("note", "请开始你的记录");
+        db.insert("flower1note", null, values);
+        db.insert("flower2note", null, values);
+        db.insert("flower3note", null, values);
+        db.insert("flower4note", null, values);
+        db.insert("flower5note", null, values);
+        db.insert("flower6note", null, values);
+        db.insert("flower7note", null, values);
+        db.insert("flower8note", null, values);
+        db.insert("flower9note", null, values);
     }
 
     @Override
