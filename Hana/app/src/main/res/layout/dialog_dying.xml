@@ -2,28 +2,53 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:stretchColumns="1">
+    android:stretchColumns="1"
+    android:background="@drawable/sorry_interface">
 
+
+    <TextView
+        android:layout_height="290dp"/>
 
     <TableRow>
-<ImageView
-    android:drawable="@drawable/ic_info_black_24dp"
-    android:layout_width="50sp"
-    android:layout_height="50sp"/>
-    </TableRow>
-    <LinearLayout android:weightSum="2">
+        <TextView
+            android:layout_height="3dp"
+            android:layout_width="70dp"/>
         <Button
-            android:id="@+id/btn_confirm"
-            android:text="Confirm"
+            android:id="@+id/use_3"
+            android:text="使用肥料"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_height="3dp"
+            android:layout_width="70dp"/>
+    </TableRow>
+
+    <LinearLayout android:weightSum="2">
+
+        <TextView
+            android:layout_width="70sp"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:id="@+id/confirm_3"
+            android:text="取消"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/btn_delete"
-        android:text="Delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-</LinearLayout>
+        <Button
+            android:id="@+id/delete_3"
+            android:text="删除"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <TextView
+            android:layout_width="70sp"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
 </TableLayout>

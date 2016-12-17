@@ -33,26 +33,31 @@ import static android.icu.util.Calendar.*;
 public class PageFragment extends Fragment {
 
     public final int EMPTY=0,INUSE=1,DYING=2,DONE=3;
-    private Spinner spinner;
     private ArrayAdapter<String> arr_adapter;
 
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
-    private ImageButton flower1;
+    //该按钮
+    public ImageButton btn1;
+    public ImageButton btn2;
+    public ImageButton btn3;
+    public ImageButton btn4;
+    public ImageButton btn5;
+    public ImageButton btn6;
+    public ImageButton btn7;
+    public ImageButton btn8;
+    public ImageButton btn9;
 
-    private ImageButton btn1;
-
-//
-    //
-int state1=EMPTY;
+    //初始变量 用于测试
+    //一号小组
+    int state1=INUSE;
     String nameofproject1="FUCK";
-    String description="FUCKING";
+    String description1="FUCKING";
     int needdays1=30;
     int nowdays1=20;
     Calendar newdate1= getInstance();
     String note1="miao";
-  //
-
+    //
 
     public static PageFragment newInstance(int page) {
 
@@ -75,12 +80,18 @@ int state1=EMPTY;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.outside, container, false);
+        View view = inflater.inflate(R.layout.inside, container, false);
         if(mPage==1)
         {
             //刷新函数
+
             if(state1==INUSE)
             {
+                if(nowdays1==needdays1)
+                {
+                    state1=DONE;
+                }
+                //判断是否为完成。
                 Calendar tempdata=newdate1;
                 tempdata.add(Calendar.DAY_OF_MONTH,2);
                 Calendar now=getInstance();
@@ -89,87 +100,83 @@ int state1=EMPTY;
                 {
                     state1=DYING;
                 }
-
+                //判断是否死亡
             }
-            //
-            newdate1.getTime();
-           view = inflater.inflate(R.layout.inside, container, false);
-
             btn1 = (ImageButton)view.findViewById(R.id.Btn1);
+
+            if(state1==EMPTY)
+                btn1.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state1==INUSE)
+                btn1.setImageDrawable(getResources().getDrawable(R.drawable.flower1));
+            else if(state1==DYING)
+                btn1.setImageDrawable(getResources().getDrawable(R.drawable.die1));
+
+
+            newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                  /*  spinner = (Spinner)getActivity().findViewById(R.id.day);
-                    //适配器
-                    arr_adapter= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_single_choice, getResources().getStringArray(R.array.plan_day_length));
-                    //设置样式
-                   // arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    //加载适配器
-                    spinner.setAdapter(arr_adapter);*/
-                   switch(state1)//获取Button状态
+                    switch(state1)//获取Button状态
                     {
-                       case EMPTY:
-                    dialogEmpty(v.getId());
-                    break;
-                    case DYING:
-                    dialogDying(v.getId());
-                        break;
-                    case INUSE:
-                       dialogInuse(newdate1,state1,nameofproject1,description, needdays1,nowdays1,note1);
-                        break;
-                     case DONE:
-//                            dialogDone(v.getId());
+                        case EMPTY:
+                            dialogEmpty();
                             break;
-               }
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate1,state1,nameofproject1,description1, needdays1,nowdays1,note1);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state1,nameofproject1,description1);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
 
-        }
-        });
+                }
+            });
         }
         else if (mPage == 2) {
 
             view = inflater.inflate(R.layout.outside, container, false);
-//            flower1 = (ImageButton)view.findViewById(R.id.imageButton1);
-//            flower1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    dialog();
-//                }
-//            });
-            //flower1 = (ImageButton)findViewById(R.id.imageButton1);
         }
-
         return view;
-       /* View view = inflater.inflate(R.layout.fragment_page, container, false);
-        TextView textView = (TextView) view;
-        textView.setText("Fragment #" + mPage);
-        return view;*/
-
     }
 
 
 
-    protected void dialogEmpty(int viewId) {
+    protected void dialogEmpty() {
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
         final View customDialog = layoutInflater.inflate(R.layout.dialog_empty, null);
-       //setSpinnerDays();
         final Dialog dialog = new AlertDialog.Builder(getActivity()).create();
         dialog.show();
         dialog.getWindow().setContentView(customDialog);
         dialog.setCanceledOnTouchOutside(false);
         customDialog.findViewById(R.id.btnConfirm).setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                 EditText name;
-                 EditText day;
-                 EditText des;
+                EditText name;
+                EditText day;
+                EditText des;
                 name=(EditText)customDialog.findViewById(R.id.name_1) ;
                 day=(EditText)customDialog.findViewById(R.id.day_1) ;
                 des=(EditText)customDialog.findViewById(R.id.des_1);
                 String n=name.getText().toString();
                 String d=des.getText().toString();
                 String d1=day.getText().toString();
-                //上述信息写入database对应位置 通过viewId
-                //更改按钮状态为INUSE
+
+                //上述信息需要写入database对应位置
+                //并且更改按钮状态state1为INUSE
+                //下面为当前日期减一
+                final Calendar nowdate= getInstance();
+                nowdate.getTime();
+                nowdate.add(DAY_OF_MONTH,-1);
+
                 dialog.dismiss();
             }
         });
@@ -181,40 +188,28 @@ int state1=EMPTY;
         });
     }
 
-    protected void dialogDying(int viewId){
+    protected void dialogDying(){
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
         View customDialog = layoutInflater.inflate(R.layout.dialog_dying, null);
         final Dialog dialog = new AlertDialog.Builder(getActivity()).create();
         dialog.show();
         dialog.getWindow().setContentView(customDialog);
         dialog.setCanceledOnTouchOutside(false);
-        customDialog.findViewById(R.id.btn_confirm).setOnClickListener(new View.OnClickListener() {
+        customDialog.findViewById(R.id.confirm_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
-        customDialog.findViewById(R.id.btn_delete).setOnClickListener(new View.OnClickListener() {
+        customDialog.findViewById(R.id.delete_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //把这个按钮的信息写为空，给数据库
+                //把这个按钮的信息全部写为空，给数据库
                 dialog.dismiss();
             }
         });
     }
 
-/*   protected void setSpinnerDays() {
-        spinner = (Spinner)getActivity().findViewById(R.id.day);
-       //适配器
-       arr_adapter= new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_single_choice, getResources().getStringArray(R.array.plan_day_length));
-       //设置样式
-       arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       //加载适配器
-       spinner.setAdapter(arr_adapter);
-
-
-
-    }*/
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void dialogInuse(Calendar newdate, int State, String nameofproject,
@@ -248,7 +243,7 @@ int state1=EMPTY;
             Checkable.setText("已打卡");
         }
         newdate.add(DAY_OF_MONTH,1);
-       if(newdate==nowdate)
+        if(newdate==nowdate)
         {
             Checkable.setText("未打卡");
         }
@@ -267,7 +262,7 @@ int state1=EMPTY;
         Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-         //把这个按钮的信息写为空，给数据库
+                //把这个按钮的信息写为空，给数据库
                 dialog.dismiss();
             }
         });
@@ -310,5 +305,5 @@ int state1=EMPTY;
             }
         });
     }
-    }
+}
 

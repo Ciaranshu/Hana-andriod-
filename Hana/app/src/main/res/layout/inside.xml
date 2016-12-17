@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/hanaface">
 
+    <!--    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40sp" />-->
     <!--根据图片大小再改-->
     <LinearLayout
         android:layout_marginTop="50dp"
@@ -12,27 +16,32 @@
         android:layout_height="wrap_content">
 
         <ImageButton
+            android:scaleType="fitXY"
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn1" />
 
         <ImageButton
+            android:scaleType="fitXY"
             android:layout_marginLeft="20dp"
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn2" />
+
 
         <ImageButton
             android:layout_marginLeft="20dp"
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:scaleType="fitXY"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn3" />
+
 
     </LinearLayout>
 
@@ -43,31 +52,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <ImageButton
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:scaleType="fitXY"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn4" />
 
         <ImageButton
             android:layout_marginLeft="20dp"
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:scaleType="fitXY"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn5" />
 
         <ImageButton
             android:layout_marginLeft="20dp"
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:scaleType="fitXY"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn6" />
 
-
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="10sp" />
 
     <LinearLayout
         android:layout_marginTop="50dp"
@@ -78,25 +94,28 @@
 
         <ImageButton
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:scaleType="fitXY"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn7" />
 
         <ImageButton
             android:layout_marginLeft="20dp"
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:scaleType="fitXY"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn8" />
 
         <ImageButton
             android:layout_marginLeft="20dp"
             android:background="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu_camera"
+            android:scaleType="fitXY"
+            android:layout_width="67dp"
+            android:layout_height="74dp"
+            android:src="@drawable/pot"
             android:id="@+id/Btn9" />
 
     </LinearLayout>
