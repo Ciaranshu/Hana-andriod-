@@ -62,72 +62,72 @@ public class PageFragment extends Fragment {
     //初始变量 用于测试
     //一号小组
     int state1=EMPTY;
-    String nameofproject1="FUCK";
-    String description1="FUCKING";
+    String nameofproject1="F";
+    String description1="FU";
     int needdays1=30;
     int nowdays1=20;
     Calendar newdate1= getInstance();;
     //
     //二号小组
     int state2=INUSE;
-    String nameofproject2="FUCK";
-    String description2="FUCKING";
+    String nameofproject2="FU";
+    String description2="FU";
     int needdays2=30;
     int nowdays2=20;
     Calendar newdate2= getInstance();
     //
     //三号小组
     int state3=INUSE;
-    String nameofproject3="FUCK";
-    String description3="FUCKING";
+    String nameofproject3="FU";
+    String description3="FU";
     int needdays3=30;
     int nowdays3=20;
     Calendar newdate3= getInstance();
     //
     //四号小组
     int state4=INUSE;
-    String nameofproject4="FUCK";
-    String description4="FUCKING";
+    String nameofproject4="F";
+    String description4="FU";
     int needdays4=30;
     int nowdays4=20;
     Calendar newdate4= getInstance();
     //
     //五号小组
     int state5=INUSE;
-    String nameofproject5="FUCK";
-    String description5="FUCKING";
+    String nameofproject5="F";
+    String description5="FU";
     int needdays5=30;
     int nowdays5=20;
     Calendar newdate5= getInstance();
     //
     //六号小组
     int state6=INUSE;
-    String nameofproject6="FUCK";
-    String description6="FUCKING";
+    String nameofproject6="FU";
+    String description6="FU";
     int needdays6=30;
     int nowdays6=20;
     Calendar newdate6= getInstance();
     //
     //七号小组
     int state7=INUSE;
-    String nameofproject7="FUCK";
-    String description7="FUCKING";
+    String nameofproject7="FU";
+    String description7="FU";
     int needdays7=30;
     int nowdays7=20;
     Calendar newdate7= getInstance();
     //
     //八号小组
     int state8=INUSE;
-    String nameofproject8="FUCK";
-    String description8="FUCKING";
+    String nameofproject8="F";
+    String description8="FU";
     int needdays8=30;
     int nowdays8=20;
     Calendar newdate8= getInstance();
     //
     //九号小组
     int state9=INUSE;
-    String nameofproject9="FUCK";
-    String description9="FUCKING";
+    String nameofproject9="FU";
+    String description9="FU";
     int needdays9=30;
     int nowdays9=20;
     Calendar newdate9= getInstance();
@@ -151,6 +151,11 @@ public class PageFragment extends Fragment {
         mPage = getArguments().getInt(ARG_PAGE);
 
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        onCreate(null);
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Nullable
@@ -164,7 +169,9 @@ public class PageFragment extends Fragment {
             refresh.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    onResume();
                     onCreateView(inflater, container, savedInstanceState);
+
 //                    fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
 //                    SQLiteDatabase fdb = fdbHelper.getWritableDatabase();
 //                    Cursor cursor = fdb.query("Flower", null, "id = ?",
