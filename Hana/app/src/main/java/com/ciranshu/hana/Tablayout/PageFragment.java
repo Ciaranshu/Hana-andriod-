@@ -33,7 +33,9 @@ import com.ciranshu.hana.R;
 import com.ciranshu.hana.TimelineAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static android.icu.util.Calendar.*;
 
@@ -1324,7 +1326,7 @@ public class PageFragment extends Fragment {
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void dialogInuse(int id,Calendar newdate, int State, String nameofproject,
+    public void dialogInuse(final int id,Calendar newdate, int State, String nameofproject,
                             String description, int needdays, int nowdays) {
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
         final View customDialog = layoutInflater.inflate(R.layout.dialog_inuse, null);
@@ -1373,7 +1375,35 @@ public class PageFragment extends Fragment {
                 SQLiteDatabase noteDB = fdbHelper.getWritableDatabase();
                 ContentValues values = new ContentValues();
                 values.put("note", myNote);
-                noteDB.insert("flower1note", null, values);
+                switch(id){
+                    case 1:
+                        noteDB.insert("flower1note", null, values);
+                        break;
+                    case 2:
+                    noteDB.insert("flower2note", null, values);
+                        break;
+                    case 3:
+                        noteDB.insert("flower3note", null, values);
+                        break;
+                    case 4:
+                        noteDB.insert("flower4note", null, values);
+                        break;
+                    case 5:
+                        noteDB.insert("flower5note", null, values);
+                        break;
+                    case 6:
+                        noteDB.insert("flower6note", null, values);
+                        break;
+                    case 7:
+                        noteDB.insert("flower7note", null, values);
+                        break;
+                    case 8:
+                        noteDB.insert("flower8note", null, values);
+                        break;
+                    case 9:
+                        noteDB.insert("flower9note", null, values);
+                        break;
+                }
                 //把这个传给数据库作为newdate
                 dialog.dismiss();
             }
@@ -1403,11 +1433,14 @@ public class PageFragment extends Fragment {
 
         ListView listView = (ListView) customDialog.findViewById(R.id.listviewDone);
         listView.setDividerHeight(0);
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        Map<String, Object> map = new HashMap<String, Object>();
 
 
-        //TimelineAdapter timelineAdapter = new TimelineAdapter(customDialog, getData());
+
+        TimelineAdapter timelineAdapter = new TimelineAdapter(getActivity(),list);
         //getdata()换为数据库接口
-        //listView.setAdapter(timelineAdapter);
+        listView.setAdapter(timelineAdapter);
 
         //变量说明
         TextView Nameofproject = (TextView) customDialog.findViewById(R.id.name_4);

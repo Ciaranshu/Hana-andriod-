@@ -120,3 +120,7 @@ Hana/.idea/inspectionProfiles/Project_Default.xml
 *.xml
 Hana/app/src/main/res/layout/inside.xml
 *.xml
+Hana/.idea/compiler.xml
+*.xml
+*.xml
+Hana/app/src/main/res/layout/activity_register.xml
