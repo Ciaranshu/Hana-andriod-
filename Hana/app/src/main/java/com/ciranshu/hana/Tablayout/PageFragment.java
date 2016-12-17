@@ -1,7 +1,10 @@
 package com.ciranshu.hana.Tablayout;
 
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ciranshu.hana.FlowerDatabaseHelper;
 import com.ciranshu.hana.MainActivity;
 import com.ciranshu.hana.NestedListView;
 import com.ciranshu.hana.R;
@@ -40,6 +44,7 @@ public class PageFragment extends Fragment {
 
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
+    public FlowerDatabaseHelper fdbHelper;
     //该按钮
     public ImageButton btn1;
     public ImageButton btn2;
@@ -154,13 +159,36 @@ public class PageFragment extends Fragment {
         if(mPage==1)
         {
             //刷新函数
-
+            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+            SQLiteDatabase fdb = fdbHelper.getWritableDatabase();
+            Cursor cursor = fdb.query("Flower", new String[]{"id"}, "id = ?",
+                    new String[]{"1"}, null, null, null);
+            if (cursor!=null){
+                nameofproject1 = cursor.getString(cursor.getColumnIndex("name"));
+                needdays1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+                nowdays1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+                int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+                int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+                int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+                newdate1.getTime();
+                newdate1.set(Calendar.YEAR,year);
+                newdate1.set(Calendar.MONTH,month);
+                newdate1.set(Calendar.DAY_OF_MONTH,day);
+                state1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+//                }while(cursor.moveToNext());
+            }
+            cursor.close();
             //第1个按钮
             if(state1==INUSE)
             {
                 if(nowdays1==needdays1)
                 {
                     state1=DONE;
+                    fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                    fdb = fdbHelper.getWritableDatabase();
+                    ContentValues values = new ContentValues();
+                    values.put("is_finished", 3);
+                    fdb.update("Flower", values, "id = ?", new String[]{"1"});
                 }
                 //判断是否为完成。
                 Calendar tempdata=newdate1;
@@ -170,6 +198,11 @@ public class PageFragment extends Fragment {
                 if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
                 {
                     state1=DYING;
+                    fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                    fdb = fdbHelper.getWritableDatabase();
+                    ContentValues values = new ContentValues();
+                    values.put("is_finished", 2);
+                    fdb.update("Flower", values, "id = ?", new String[]{"1"});
                 }
                 //判断是否死亡
             }

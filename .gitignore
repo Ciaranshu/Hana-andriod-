@@ -82,3 +82,7 @@ Hana/.idea/runConfigurations.xml
 Hana/app/src/main/res/layout/inside.xml
 >>>>>>> 267367bb9e2af37a2cda9b38e79912fe126f0524
 Hana/app/src/main/java/com/ciranshu/hana/MainActivity.java
+*.xml
+Hana/.idea/compiler.xml
+*.xml
+*.xml
