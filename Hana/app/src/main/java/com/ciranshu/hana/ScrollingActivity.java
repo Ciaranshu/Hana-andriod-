@@ -78,30 +78,6 @@ public class ScrollingActivity extends AppCompatActivity {
         }
         cursor.close();
 
-
-        map.put("title", "这是第1行测试数据");
-        map.put("date", "12-17");
-        map.put("body", "");
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("title", "这是第2行测试数据");
-        map.put("date", "12-17");
-        map.put("body", "");
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("title", "这是第3行测试数据");
-        map.put("date", "12-17");
-        map.put("body", "");
-        list.add(map);
-
-        map = new HashMap<String, Object>();
-        map.put("title", "这是第4行测试数据");
-        map.put("date", "12-17");
-        map.put("body", "哈哈哈哈哈");
-        list.add(map);
-
         return list;
     }
 }

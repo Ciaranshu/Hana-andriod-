@@ -155,14 +155,370 @@ public class PageFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.inside, container, false);
         if(mPage==1)
         {
             //刷新函数
+            ImageButton refresh=(ImageButton)view.findViewById(R.id.refresh);
+            refresh.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onCreateView(inflater, container, savedInstanceState);
+//                    fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                    SQLiteDatabase fdb = fdbHelper.getWritableDatabase();
+//                    Cursor cursor = fdb.query("Flower", null, "id = ?",
+//                            new String[]{"1"}, null, null, null);
+//                    if (cursor.moveToFirst()){
+//                        do {
+//                            nameofproject1 = cursor.getString(cursor.getColumnIndex("name"));
+//                            needdays1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("needDays")));
+//                            nowdays1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("nowDays")));
+//                            int year = Integer.parseInt(cursor.getString(cursor.getColumnIndex("year")));
+//                            int month = Integer.parseInt(cursor.getString(cursor.getColumnIndex("month")));
+//                            int day = Integer.parseInt(cursor.getString(cursor.getColumnIndex("day")));
+//                            newdate1.getTime();
+//                            newdate1.set(Calendar.YEAR, year);
+//                            newdate1.set(Calendar.MONTH, month);
+//                            newdate1.set(Calendar.DAY_OF_MONTH, day);
+//                            state1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
+//                        } while(cursor.moveToNext());
+//                    }
+//
+//                    //1
+//                    if(state1==INUSE)
+//                    {
+//                        if(nowdays1==needdays1)
+//                        {
+//                            state1=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"1"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate1;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state1=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"1"});
+//                        }
+//                        //判断是否死亡
+//                    }
+////                    btn1 = (ImageButton)view.findViewById(R.id.Btn1);
+////
+////                    if(state1==EMPTY)
+////                        btn1.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+////                    else if(state1==INUSE)
+////                        btn1.setImageDrawable(getResources().getDrawable(R.drawable.flower1));
+////                    else if(state1==DYING)
+////                        btn1.setImageDrawable(getResources().getDrawable(R.drawable.die1));
+//
+//                    if(state2==INUSE)
+//                    {
+//                        if(nowdays2==needdays2)
+//                        {
+//                            state2=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"2"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate2;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state2=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"2"});
+//                        }
+//                        //判断是否死亡
+//                    }
+//                    btn2 = (ImageButton)view.findViewById(R.id.Btn2);
+//
+//                    if(state2==EMPTY)
+//                        btn2.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+//                    else if(state2==INUSE)
+//                        btn2.setImageDrawable(getResources().getDrawable(R.drawable.flower2));
+//                    else if(state2==DYING)
+//                        btn2.setImageDrawable(getResources().getDrawable(R.drawable.die2));
+//
+//                    //3
+//                    if(state3==INUSE)
+//                    {
+//                        if(nowdays3==needdays3)
+//                        {
+//                            state3=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"3"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate3;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state3=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"3"});
+//                        }
+//                        //判断是否死亡
+//                    }
+//                    btn3 = (ImageButton)view.findViewById(R.id.Btn3);
+//
+//                    if(state3==EMPTY)
+//                        btn3.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+//                    else if(state3==INUSE)
+//                        btn3.setImageDrawable(getResources().getDrawable(R.drawable.flower3));
+//                    else if(state3==DYING)
+//                        btn3.setImageDrawable(getResources().getDrawable(R.drawable.die3));
+//
+//                    if(state4==INUSE)
+//                    {
+//                        if(nowdays4==needdays4)
+//                        {
+//                            state4=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"4"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate4;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state4=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"4"});
+//                        }
+//                        //判断是否死亡
+//                    }
+//                    btn4 = (ImageButton)view.findViewById(R.id.Btn4);
+//
+//                    if(state4==EMPTY)
+//                        btn4.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+//                    else if(state4==INUSE)
+//                        btn4.setImageDrawable(getResources().getDrawable(R.drawable.flower4));
+//                    else if(state4==DYING)
+//                        btn4.setImageDrawable(getResources().getDrawable(R.drawable.die4));
+//
+//                    //1
+//                    if(state5==INUSE)
+//                    {
+//                        if(nowdays5==needdays5)
+//                        {
+//                            state5=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"5"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate5;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state5=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"5"});
+//                        }
+//                        //判断是否死亡
+//                    }
+//                    btn5 = (ImageButton)view.findViewById(R.id.Btn5);
+//
+//                    if(state5==EMPTY)
+//                        btn5.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+//                    else if(state5==INUSE)
+//                        btn5.setImageDrawable(getResources().getDrawable(R.drawable.flower5));
+//                    else if(state5==DYING)
+//                        btn5.setImageDrawable(getResources().getDrawable(R.drawable.die5));
+//
+//                    if(state6==INUSE)
+//                    {
+//                        if(nowdays6==needdays6)
+//                        {
+//                            state6=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"6"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate6;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state6=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"6"});
+//                        }
+//                        //判断是否死亡
+//                    }
+//                    btn6 = (ImageButton)view.findViewById(R.id.Btn6);
+//
+//                    if(state6==EMPTY)
+//                        btn6.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+//                    else if(state6==INUSE)
+//                        btn6.setImageDrawable(getResources().getDrawable(R.drawable.flower6));
+//                    else if(state6==DYING)
+//                        btn6.setImageDrawable(getResources().getDrawable(R.drawable.die6));
+//
+//                    //1
+//                    if(state7==INUSE)
+//                    {
+//                        if(nowdays7==needdays7)
+//                        {
+//                            state7=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"7"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate7;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state7=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"7"});
+//                        }
+//                        //判断是否死亡
+//                    }
+//                    btn7 = (ImageButton)view.findViewById(R.id.Btn7);
+//
+//                    if(state7==EMPTY)
+//                        btn1.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+//                    else if(state7==INUSE)
+//                        btn1.setImageDrawable(getResources().getDrawable(R.drawable.flower7));
+//                    else if(state7==DYING)
+//                        btn1.setImageDrawable(getResources().getDrawable(R.drawable.die7));
+//
+//                    if(state8==INUSE)
+//                    {
+//                        if(nowdays8==needdays8)
+//                        {
+//                            state8=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"8"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate8;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state8=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"8"});
+//                        }
+//                        //判断是否死亡
+//                    }
+//                    btn8 = (ImageButton)view.findViewById(R.id.Btn8);
+//
+//                    if(state8==EMPTY)
+//                        btn8.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+//                    else if(state8==INUSE)
+//                        btn8.setImageDrawable(getResources().getDrawable(R.drawable.flower8));
+//                    else if(state8==DYING)
+//                        btn8.setImageDrawable(getResources().getDrawable(R.drawable.die8));
+//
+//                    //1
+//                    if(state9==INUSE)
+//                    {
+//                        if(nowdays9==needdays9)
+//                        {
+//                            state9=DONE;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 3);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"9"});
+//                        }
+//                        //判断是否为完成。
+//                        Calendar tempdata=newdate9;
+//                        tempdata.add(Calendar.DAY_OF_MONTH,2);
+//                        Calendar now=getInstance();
+//                        now.getTime();
+//                        if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+//                        {
+//                            state9=DYING;
+//                            fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+//                            fdb = fdbHelper.getWritableDatabase();
+//                            ContentValues values = new ContentValues();
+//                            values.put("is_finished", 2);
+//                            fdb.update("Flower", values, "id = ?", new String[]{"9"});
+//                        }
+//                        //判断是否死亡
+//                    }
+//                    btn9 = (ImageButton)view.findViewById(R.id.Btn9);
+//
+//                    if(state9==EMPTY)
+//                        btn9.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+//                    else if(state9==INUSE)
+//                        btn9.setImageDrawable(getResources().getDrawable(R.drawable.flower9));
+//                    else if(state9==DYING)
+//                        btn9.setImageDrawable(getResources().getDrawable(R.drawable.die9));
+//
+                }
+            });
             fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
             SQLiteDatabase fdb = fdbHelper.getWritableDatabase();
-            Cursor cursor = fdb.query("Flower", new String[]{"id"}, "id = ?",
+            Cursor cursor = fdb.query("Flower", null, "id = ?",
                     new String[]{"1"}, null, null, null);
             if (cursor.moveToFirst()){
                 do {
@@ -177,7 +533,7 @@ public class PageFragment extends Fragment {
                     newdate1.set(Calendar.MONTH, month);
                     newdate1.set(Calendar.DAY_OF_MONTH, day);
                     state1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
-                    Log.d("Hello", "nameofproject1 is " + nameofproject1);
+                    description1 = cursor.getString(cursor.getColumnIndex("description"));
                 } while(cursor.moveToNext());
             }
             cursor.close();
@@ -297,7 +653,6 @@ public class PageFragment extends Fragment {
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                     }
-
                 }
             });
 
@@ -690,7 +1045,13 @@ public class PageFragment extends Fragment {
         else if (mPage == 2) {
 
             view = inflater.inflate(R.layout.outside, container, false);
-
+            ImageButton bt1=(ImageButton)view.findViewById(R.id.outside1);
+            bt1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialogDone(3,"好好学习","我今天好好学习了");
+                }
+            });
         }
         return view;
     }
@@ -823,6 +1184,12 @@ public class PageFragment extends Fragment {
                 nowdate.add(DAY_OF_MONTH,1);
                 EditText Note=(EditText)customDialog.findViewById(R.id.Note);
                 String myNote=Note.getText().toString();
+
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                SQLiteDatabase noteDB = fdbHelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put("note", myNote);
+                noteDB.insert("flower1note", null, values);
                 //把这个传给数据库作为newdate
                 dialog.dismiss();
             }
