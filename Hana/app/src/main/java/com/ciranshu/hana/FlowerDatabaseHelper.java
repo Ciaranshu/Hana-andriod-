@@ -15,13 +15,46 @@ public class FlowerDatabaseHelper extends SQLiteOpenHelper{
             + "year integer, "
             + "month integer, "
             + "day integer, "
-            + "hour integer, "
-            + "minute integer, "
-            + "second integer, "
-            + "frequency integer, "
-            + "lastDays integer, "
-            + "is_finished integer, "
-            + "Description text)";
+            + "needDays integer, "
+            + "nowDays integer, "
+            + "description text, "
+            + "is_finished integer)";
+
+    public static final String CREATE_FLOWER_NOTE_1 = "create table flower1note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
+
+    public static final String CREATE_FLOWER_NOTE_2 = "create table flower2note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
+
+    public static final String CREATE_FLOWER_NOTE_3 = "create table flower3note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
+
+    public static final String CREATE_FLOWER_NOTE_4 = "create table flower4note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
+
+    public static final String CREATE_FLOWER_NOTE_5 = "create table flower5note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
+
+    public static final String CREATE_FLOWER_NOTE_6 = "create table flower6note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
+
+    public static final String CREATE_FLOWER_NOTE_7 = "create table flower7note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
+
+    public static final String CREATE_FLOWER_NOTE_8 = "create table flower8note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
+
+    public static final String CREATE_FLOWER_NOTE_9 = "create table flower9note ( "
+            + "id integer primary key autoincrement, "
+            + "note text)";
     //table name (Category) should be input
     //db name is from user name
 
@@ -36,6 +69,15 @@ public class FlowerDatabaseHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db){
         //   db.execSQL(CREATE_BOOK);
         db.execSQL(CREATE_FLOWER);
+        db.execSQL(CREATE_FLOWER_NOTE_1);
+        db.execSQL(CREATE_FLOWER_NOTE_2);
+        db.execSQL(CREATE_FLOWER_NOTE_3);
+        db.execSQL(CREATE_FLOWER_NOTE_4);
+        db.execSQL(CREATE_FLOWER_NOTE_5);
+        db.execSQL(CREATE_FLOWER_NOTE_6);
+        db.execSQL(CREATE_FLOWER_NOTE_7);
+        db.execSQL(CREATE_FLOWER_NOTE_8);
+        db.execSQL(CREATE_FLOWER_NOTE_9);
         Toast.makeText(mContext, "Create succeed", Toast.LENGTH_SHORT).show();
     }
 
