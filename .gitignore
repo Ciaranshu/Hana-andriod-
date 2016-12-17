@@ -89,3 +89,6 @@ Hana/.idea/inspectionProfiles/Project_Default.xml
 Hana/.idea/misc.xml
 Hana/.idea/modules.xml
 Hana/.idea/runConfigurations.xml
+Hana/.idea/compiler.xml
+Hana/.idea/encodings.xml
+*.xml
