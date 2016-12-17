@@ -47,22 +47,27 @@ public class TimelineAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
 
             viewHolder.title = (TextView) convertView.findViewById(R.id.title);
+            viewHolder.date = (TextView) convertView.findViewById(R.id.date);
+            viewHolder.body = (TextView) convertView.findViewById(R.id.body);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
         String titleStr = list.get(position).get("title").toString();
-
+        String dateStr =list.get(position).get("date").toString();
+        String bodyStr =list.get(position).get("body").toString();
 
         viewHolder.title.setText(titleStr);
+        viewHolder.date.setText(dateStr);
+        viewHolder.body.setText(bodyStr);
 
         return convertView;
     }
 
     static class ViewHolder {
-        public TextView year;
-        public TextView month;
+        public TextView date;
+        public TextView body;
         public TextView title;
     }
 }  

@@ -18,7 +18,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.design.widget.TabLayout;
+import android.widget.ListView;
+
 import com.ciranshu.hana.Tablayout.SimpleFragmentPagerAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity
@@ -40,6 +47,7 @@ public class MainActivity extends AppCompatActivity
         tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -138,4 +146,24 @@ public class MainActivity extends AppCompatActivity
                 });
     }
 
+    private List<Map<String, Object>> getData() {
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("title", "这是第1行测试数据");
+        list.add(map);
+
+        map = new HashMap<String, Object>();
+        map.put("title", "这是第2行测试数据");
+        list.add(map);
+
+        map = new HashMap<String, Object>();
+        map.put("title", "这是第3行测试数据");
+        list.add(map);
+
+        map = new HashMap<String, Object>();
+        map.put("title", "这是第4行测试数据");
+        list.add(map);
+        return list;
+    }
 }

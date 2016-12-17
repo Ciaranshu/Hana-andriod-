@@ -70,6 +70,7 @@ Hana/app/src/main/AndroidManifest.xml
 Hana/app/src/main/java/com/ciranshu/hana/JustforSecond.java
 Hana.zip
 Hana/app/build.gradle
+<<<<<<< HEAD
 Hana/.idea/compiler.xml
 Hana/.idea/encodings.xml
 Hana/.idea/gradle.xml
@@ -77,3 +78,7 @@ Hana/.idea/inspectionProfiles/Project_Default.xml
 Hana/.idea/misc.xml
 Hana/.idea/modules.xml
 Hana/.idea/runConfigurations.xml
+=======
+Hana/app/src/main/res/layout/inside.xml
+>>>>>>> 267367bb9e2af37a2cda9b38e79912fe126f0524
+Hana/app/src/main/java/com/ciranshu/hana/MainActivity.java

@@ -28,7 +28,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         listView = (NestedListView) this.findViewById(R.id.listview);
         listView.setDividerHeight(0);
-        timelineAdapter = new TimelineAdapter(this, getData());
+        timelineAdapter = new TimelineAdapter(this, getData());//getdata()换为数据库接口
         listView.setAdapter(timelineAdapter);
 
 
@@ -49,19 +49,28 @@ public class ScrollingActivity extends AppCompatActivity {
 
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("title", "这是第1行测试数据");
+        map.put("date", "12-17");
+        map.put("body", "");
         list.add(map);
 
         map = new HashMap<String, Object>();
         map.put("title", "这是第2行测试数据");
+        map.put("date", "12-17");
+        map.put("body", "");
         list.add(map);
 
         map = new HashMap<String, Object>();
         map.put("title", "这是第3行测试数据");
+        map.put("date", "12-17");
+        map.put("body", "");
         list.add(map);
 
         map = new HashMap<String, Object>();
         map.put("title", "这是第4行测试数据");
+        map.put("date", "12-17");
+        map.put("body", "哈哈哈哈哈");
         list.add(map);
+
         return list;
     }
 }
