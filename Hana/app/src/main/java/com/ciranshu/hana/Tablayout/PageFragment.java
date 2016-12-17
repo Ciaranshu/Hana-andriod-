@@ -1144,6 +1144,142 @@ public class PageFragment extends Fragment {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
         Map<String, Object> map = new HashMap<String, Object>();
 
+        fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+        SQLiteDatabase fdb = fdbHelper.getWritableDatabase();
+        Cursor cursor = fdb.query("flower1note", null, "is_finished = ?", new String[]{"3"},
+                null, null, null);
+        if (cursor.moveToFirst()){
+            do{
+                String note = cursor.getString(cursor.getColumnIndex("note"));
+                map.put("title", note);
+                list.add(map);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        switch(id){
+            case 1:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower1note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+
+            case 2:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower2note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+            case 3:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower3note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+
+            case 4:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower4note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+
+            case 5:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower5note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+
+            case 6:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower6note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+            case 7:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower7note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+            case 8:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower8note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+            case 9:
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                fdb = fdbHelper.getWritableDatabase();
+                cursor = fdb.query("flower9note", null, "is_finished = ?", new String[]{"3"},
+                        null, null, null);
+                if (cursor.moveToFirst()){
+                    do{
+                        String note = cursor.getString(cursor.getColumnIndex("note"));
+                        map.put("title", note);
+                        list.add(map);
+                    }while(cursor.moveToNext());
+                }
+                break;
+        }
+
 
 
         TimelineAdapter timelineAdapter = new TimelineAdapter(getActivity(),list);
