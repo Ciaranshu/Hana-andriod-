@@ -1226,6 +1226,8 @@ public class PageFragment extends Fragment {
 
         ListView listView = (ListView) customDialog.findViewById(R.id.listviewDone);
         listView.setDividerHeight(0);
+
+
         //TimelineAdapter timelineAdapter = new TimelineAdapter(customDialog, getData());
         //getdata()换为数据库接口
         //listView.setAdapter(timelineAdapter);
