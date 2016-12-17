@@ -60,7 +60,7 @@ public class PageFragment extends Fragment {
 
     //初始变量 用于测试
     //一号小组
-    int state1=INUSE;
+    int state1=EMPTY;
     String nameofproject1="FUCK";
     String description1="FUCKING";
     int needdays1=30;
