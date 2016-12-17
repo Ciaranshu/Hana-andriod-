@@ -1,5 +1,7 @@
 package com.ciranshu.hana;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +19,7 @@ public class ScrollingActivity extends AppCompatActivity {
     private NestedListView listView;
     List<String> data ;
     private TimelineAdapter timelineAdapter;
+    public FlowerDatabaseHelper fdbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,31 +48,35 @@ public class ScrollingActivity extends AppCompatActivity {
 
 
     private List<Map<String, Object>> getData() {
+
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("title", "这是第1行测试数据");
-        map.put("date", "12-17");
-        map.put("body", "");
-        list.add(map);
 
-        map = new HashMap<String, Object>();
-        map.put("title", "这是第2行测试数据");
-        map.put("date", "12-17");
-        map.put("body", "");
-        list.add(map);
+        fdbHelper = new FlowerDatabaseHelper(this, "userFlower.db", null, 2);
+        SQLiteDatabase fdb = fdbHelper.getWritableDatabase();
+        Cursor cursor = fdb.query("Flower", null, "id > ?", new String[]{"0"},
+                null, null, null);
 
-        map = new HashMap<String, Object>();
-        map.put("title", "这是第3行测试数据");
-        map.put("date", "12-17");
-        map.put("body", "");
-        list.add(map);
+        if (cursor.moveToFirst()){
+            do{
+                String nameOfProject = cursor.getString(cursor.getColumnIndex("name"));
+                int year = cursor.getInt(cursor.getColumnIndex("year"));
+                int month = cursor.getInt(cursor.getColumnIndex("month"));
+                int day = cursor.getInt(cursor.getColumnIndex("day"));
+                String description = cursor.getString(cursor.getColumnIndex("description"));
 
-        map = new HashMap<String, Object>();
-        map.put("title", "这是第4行测试数据");
-        map.put("date", "12-17");
-        map.put("body", "哈哈哈哈哈");
-        list.add(map);
+                String _year = Integer.toString(year);
+                String _month = Integer.toString(month);
+                String _day = Integer.toString(day);
+                map.put("title", nameOfProject);
+                map.put("date", _year + "-" + _month + "-" + _day);
+                map.put("body", description);
+                list.add(map);
+
+              }while(cursor.moveToNext());
+        }
+        cursor.close();
 
         return list;
     }

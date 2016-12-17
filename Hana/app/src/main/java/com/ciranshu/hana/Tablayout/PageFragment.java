@@ -540,7 +540,7 @@ public class PageFragment extends Fragment {
                     newdate1.set(Calendar.MONTH, month);
                     newdate1.set(Calendar.DAY_OF_MONTH, day);
                     state1 = Integer.parseInt(cursor.getString(cursor.getColumnIndex("is_finished")));
-                    Log.d("Hello", "nameofproject1 is " + nameofproject1);
+                    description1 = cursor.getString(cursor.getColumnIndex("description"));
                 } while(cursor.moveToNext());
             }
             cursor.close();
@@ -660,7 +660,6 @@ public class PageFragment extends Fragment {
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                     }
-
                 }
             });
 
@@ -1192,6 +1191,12 @@ public class PageFragment extends Fragment {
                 nowdate.add(DAY_OF_MONTH,1);
                 EditText Note=(EditText)customDialog.findViewById(R.id.Note);
                 String myNote=Note.getText().toString();
+
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                SQLiteDatabase noteDB = fdbHelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put("note", myNote);
+                noteDB.insert("flower1note", null, values);
                 //把这个传给数据库作为newdate
                 dialog.dismiss();
             }

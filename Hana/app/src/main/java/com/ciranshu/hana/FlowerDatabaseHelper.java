@@ -84,7 +84,7 @@ public class FlowerDatabaseHelper extends SQLiteOpenHelper{
         ContentValues values = new ContentValues();
         values.put("id", 0);
         values.put("name", "ad");
-        values.put("year", 100);
+        values.put("year", 2016);
         values.put("month", 2);
         values.put("day", 10);
         values.put("needDays", 30);
