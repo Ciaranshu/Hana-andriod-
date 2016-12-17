@@ -16,13 +16,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ciranshu.hana.MainActivity;
+import com.ciranshu.hana.NestedListView;
 import com.ciranshu.hana.R;
+import com.ciranshu.hana.TimelineAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +50,8 @@ public class PageFragment extends Fragment {
     public ImageButton btn7;
     public ImageButton btn8;
     public ImageButton btn9;
+
+
 
     //初始变量 用于测试
     //一号小组
@@ -74,6 +79,7 @@ public class PageFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt(ARG_PAGE);
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -272,12 +278,20 @@ public class PageFragment extends Fragment {
     public void dialogDone( int state, String nameofproject,
                             String description) {
         //需要舒畅在这个界面加时间轴
+
+
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
         View customDialog = layoutInflater.inflate(R.layout.dialog_done, null);
         final Dialog dialog = new AlertDialog.Builder(getActivity()).create();
         dialog.show();
         dialog.getWindow().setContentView(customDialog);
         dialog.setCanceledOnTouchOutside(false);
+
+        ListView listView = (ListView) customDialog.findViewById(R.id.listviewDone);
+        listView.setDividerHeight(0);
+        //TimelineAdapter timelineAdapter = new TimelineAdapter(customDialog, getData());
+        //getdata()换为数据库接口
+        //listView.setAdapter(timelineAdapter);
 
         //变量说明
         TextView Nameofproject = (TextView) customDialog.findViewById(R.id.name_4);
