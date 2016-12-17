@@ -3,6 +3,7 @@ package com.ciranshu.hana;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
@@ -94,6 +95,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mUserDbRW = friDbHp.getWritableDatabase();
         //Log.e("LoginActivity", "succeseful");
+        ContentValues newRow = new ContentValues();
+        newRow.put("name", "jiushi");
+        newRow.put("username", "jiushi@qq.com");
+        newRow.put("password", "123456");
+        newRow.put("age", "20");
+        mUserDbRW.insert(DB_TABLE, null, newRow);
 
         Cursor c = null;
 
@@ -106,10 +113,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         DUMMY_CREDENTIALS.add("cscshu@outlook.com:hello");
 //
         c.moveToFirst();
-//        DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
-//        while(c.moveToNext()){
-//            DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
-//        }
+        DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
+        while(c.moveToNext()){
+            DUMMY_CREDENTIALS.add(c.getString(0)+":"+c.getString(1));
+        }
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
