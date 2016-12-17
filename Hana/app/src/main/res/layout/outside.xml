@@ -1,105 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/outside">
 
-    <LinearLayout
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="90dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <ImageButton
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton1" />
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower1"
+        android:scaleType="fitXY"
+        android:id="@+id/outside1"
+        android:layout_marginTop="189dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
-        <ImageButton
-            android:layout_marginLeft="20dp"
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton2" />
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower2"
+        android:scaleType="fitXY"
+        android:id="@+id/outside4"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/outside1"
+        android:layout_toEndOf="@+id/outside1" />
 
-        <ImageButton
-            android:layout_marginLeft="20dp"
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton3" />
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower3"
+        android:scaleType="fitXY"
+        android:id="@+id/outside2"
+        android:layout_alignTop="@+id/outside4"
+        android:layout_toLeftOf="@+id/outside1"
+        android:layout_toStartOf="@+id/outside1" />
 
-    </LinearLayout>
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower4"
+        android:scaleType="fitXY"
+        android:id="@+id/outside3"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_alignTop="@+id/outside2"
+        android:layout_toLeftOf="@+id/outside4"
+        android:layout_toStartOf="@+id/outside4" />
 
-    <LinearLayout
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="90dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <ImageButton
+    android:layout_width="80dp"
+    android:layout_height="100dp"
+    android:background="#00000000"
+    app:srcCompat="@drawable/flower5"
+    android:scaleType="fitXY"
+    android:id="@+id/outside5"
+        android:layout_alignTop="@+id/outside3"
+        android:layout_toLeftOf="@+id/outside3"
+        android:layout_toStartOf="@+id/outside3"
+        android:layout_marginTop="13dp" />
 
-        <ImageButton
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton4" />
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower6"
+        android:scaleType="fitXY"
+        android:id="@+id/outside7"
+        android:layout_alignTop="@+id/outside3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp" />
 
-        <ImageButton
-            android:layout_marginLeft="20dp"
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton5" />
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower7"
+        android:scaleType="fitXY"
+        android:id="@+id/outside8"
+        android:layout_marginTop="33dp"
+        android:layout_alignTop="@+id/outside5"
+        android:layout_alignRight="@+id/outside3"
+        android:layout_alignEnd="@+id/outside3"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
 
-        <ImageButton
-            android:layout_marginLeft="20dp"
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton6" />
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower8"
+        android:scaleType="fitXY"
+        android:id="@+id/outside6"
+        android:layout_alignTop="@+id/outside5"
+        android:layout_toRightOf="@+id/outside8"
+        android:layout_toEndOf="@+id/outside8" />
 
-    </LinearLayout>
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower1"
+        android:scaleType="fitXY"
+        android:id="@+id/outside9"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/outside1"
+        android:layout_toRightOf="@+id/outside2"
+        android:layout_toEndOf="@+id/outside2" />
 
-    <LinearLayout
-
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="90dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton7" />
-
-        <ImageButton
-            android:layout_marginLeft="20dp"
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton8" />
-
-        <ImageButton
-            android:layout_marginLeft="20dp"
-            android:background="#00000000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher"
-            android:id="@+id/imageButton9" />
-
-    </LinearLayout>
-
-</LinearLayout>
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/flower9"
+        android:scaleType="fitXY"
+        android:id="@+id/outside10"
+        android:layout_alignBottom="@+id/outside8"
+        android:layout_alignRight="@+id/outside7"
+        android:layout_alignEnd="@+id/outside7"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>

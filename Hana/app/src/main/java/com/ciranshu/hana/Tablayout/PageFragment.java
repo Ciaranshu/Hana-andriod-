@@ -55,8 +55,72 @@ public class PageFragment extends Fragment {
     String description1="FUCKING";
     int needdays1=30;
     int nowdays1=20;
-    Calendar newdate1= getInstance();
-    String note1="miao";
+    Calendar newdate1= getInstance();;
+    //
+    //二号小组
+    int state2=INUSE;
+    String nameofproject2="FUCK";
+    String description2="FUCKING";
+    int needdays2=30;
+    int nowdays2=20;
+    Calendar newdate2= getInstance();
+    //
+    //三号小组
+    int state3=INUSE;
+    String nameofproject3="FUCK";
+    String description3="FUCKING";
+    int needdays3=30;
+    int nowdays3=20;
+    Calendar newdate3= getInstance();
+    //
+    //四号小组
+    int state4=INUSE;
+    String nameofproject4="FUCK";
+    String description4="FUCKING";
+    int needdays4=30;
+    int nowdays4=20;
+    Calendar newdate4= getInstance();
+    //
+    //五号小组
+    int state5=INUSE;
+    String nameofproject5="FUCK";
+    String description5="FUCKING";
+    int needdays5=30;
+    int nowdays5=20;
+    Calendar newdate5= getInstance();
+    //
+    //六号小组
+    int state6=INUSE;
+    String nameofproject6="FUCK";
+    String description6="FUCKING";
+    int needdays6=30;
+    int nowdays6=20;
+    Calendar newdate6= getInstance();
+    //
+    //七号小组
+    int state7=INUSE;
+    String nameofproject7="FUCK";
+    String description7="FUCKING";
+    int needdays7=30;
+    int nowdays7=20;
+    Calendar newdate7= getInstance();
+    //
+    //八号小组
+    int state8=INUSE;
+    String nameofproject8="FUCK";
+    String description8="FUCKING";
+    int needdays8=30;
+    int nowdays8=20;
+    Calendar newdate8= getInstance();
+    //
+    //九号小组
+    int state9=INUSE;
+    String nameofproject9="FUCK";
+    String description9="FUCKING";
+    int needdays9=30;
+    int nowdays9=20;
+    Calendar newdate9= getInstance();
+    String note9="miao";
     //
 
     public static PageFragment newInstance(int page) {
@@ -85,6 +149,7 @@ public class PageFragment extends Fragment {
         {
             //刷新函数
 
+            //第1个按钮
             if(state1==INUSE)
             {
                 if(nowdays1==needdays1)
@@ -111,8 +176,7 @@ public class PageFragment extends Fragment {
             else if(state1==DYING)
                 btn1.setImageDrawable(getResources().getDrawable(R.drawable.die1));
 
-
-            newdate1.getTime();
+            //newdate1.getTime();
             //view = inflater.inflate(R.layout.inside, container, false);
 
 
@@ -128,7 +192,7 @@ public class PageFragment extends Fragment {
                             dialogDying();
                             break;
                         case INUSE:
-                            dialogInuse(newdate1,state1,nameofproject1,description1, needdays1,nowdays1,note1);
+                            dialogInuse(newdate1,state1,nameofproject1,description1, needdays1,nowdays1);
                             //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
                             break;
                         case DONE:
@@ -139,10 +203,452 @@ public class PageFragment extends Fragment {
 
                 }
             });
+
+            //第2个按钮
+            if(state2==INUSE)
+            {
+                if(nowdays2==needdays2)
+                {
+                    state2=DONE;
+                }
+                //判断是否为完成。
+                Calendar tempdata=newdate2;
+                tempdata.add(Calendar.DAY_OF_MONTH,2);
+                Calendar now=getInstance();
+                now.getTime();
+                if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+                {
+                    state1=DYING;
+                }
+                //判断是否死亡
+            }
+            btn2 = (ImageButton)view.findViewById(R.id.Btn2);
+
+            if(state2==EMPTY)
+                btn2.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state2==INUSE)
+                btn2.setImageDrawable(getResources().getDrawable(R.drawable.flower2));
+            else if(state2==DYING)
+                btn2.setImageDrawable(getResources().getDrawable(R.drawable.die2));
+
+            //newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(state2)//获取Button状态
+                    {
+                        case EMPTY:
+                            dialogEmpty();
+                            break;
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate2,state2,nameofproject2,description2, needdays2,nowdays2);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state2,nameofproject2,description2);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
+
+                }
+            });
+
+            //第3个按钮
+            if(state3==INUSE)
+            {
+                if(nowdays3==needdays3)
+                {
+                    state3=DONE;
+                }
+                //判断是否为完成。
+                Calendar tempdata=newdate3;
+                tempdata.add(Calendar.DAY_OF_MONTH,2);
+                Calendar now=getInstance();
+                now.getTime();
+                if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+                {
+                    state1=DYING;
+                }
+                //判断是否死亡
+            }
+            btn3 = (ImageButton)view.findViewById(R.id.Btn3);
+
+            if(state3==EMPTY)
+                btn3.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state3==INUSE)
+                btn3.setImageDrawable(getResources().getDrawable(R.drawable.flower3));
+            else if(state3==DYING)
+                btn3.setImageDrawable(getResources().getDrawable(R.drawable.die3));
+
+            //newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(state3)//获取Button状态
+                    {
+                        case EMPTY:
+                            dialogEmpty();
+                            break;
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate3,state3,nameofproject3,description3, needdays3,nowdays3);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state3,nameofproject3,description3);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
+
+                }
+            });
+
+            //第4个按钮
+            if(state4==INUSE)
+            {
+                if(nowdays4==needdays4)
+                {
+                    state4=DONE;
+                }
+                //判断是否为完成。
+                Calendar tempdata=newdate4;
+                tempdata.add(Calendar.DAY_OF_MONTH,2);
+                Calendar now=getInstance();
+                now.getTime();
+                if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+                {
+                    state4=DYING;
+                }
+                //判断是否死亡
+            }
+            btn4 = (ImageButton)view.findViewById(R.id.Btn4);
+
+            if(state4==EMPTY)
+                btn4.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state4==INUSE)
+                btn4.setImageDrawable(getResources().getDrawable(R.drawable.flower4));
+            else if(state4==DYING)
+                btn4.setImageDrawable(getResources().getDrawable(R.drawable.die4));
+
+            //newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
+            btn4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(state4)//获取Button状态
+                    {
+                        case EMPTY:
+                            dialogEmpty();
+                            break;
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate4,state4,nameofproject4,description4, needdays4,nowdays4);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state4,nameofproject4,description4);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
+
+                }
+            });
+
+            //第5个按钮
+            if(state5==INUSE)
+            {
+                if(nowdays5==needdays5)
+                {
+                    state5=DONE;
+                }
+                //判断是否为完成。
+                Calendar tempdata=newdate5;
+                tempdata.add(Calendar.DAY_OF_MONTH,2);
+                Calendar now=getInstance();
+                now.getTime();
+                if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+                {
+                    state5=DYING;
+                }
+                //判断是否死亡
+            }
+            btn5 = (ImageButton)view.findViewById(R.id.Btn5);
+
+            if(state5==EMPTY)
+                btn5.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state5==INUSE)
+                btn5.setImageDrawable(getResources().getDrawable(R.drawable.flower5));
+            else if(state5==DYING)
+                btn5.setImageDrawable(getResources().getDrawable(R.drawable.die5));
+
+            //newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
+            btn5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(state5)//获取Button状态
+                    {
+                        case EMPTY:
+                            dialogEmpty();
+                            break;
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate5,state5,nameofproject5,description5, needdays5,nowdays5);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state5,nameofproject5,description5);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
+
+                }
+            });
+
+            //第6个按钮
+            if(state6==INUSE)
+            {
+                if(nowdays6==needdays6)
+                {
+                    state6=DONE;
+                }
+                //判断是否为完成。
+                Calendar tempdata=newdate6;
+                tempdata.add(Calendar.DAY_OF_MONTH,2);
+                Calendar now=getInstance();
+                now.getTime();
+                if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+                {
+                    state6=DYING;
+                }
+                //判断是否死亡
+            }
+            btn6 = (ImageButton)view.findViewById(R.id.Btn6);
+
+            if(state6==EMPTY)
+                btn6.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state6==INUSE)
+                btn6.setImageDrawable(getResources().getDrawable(R.drawable.flower6));
+            else if(state6==DYING)
+                btn6.setImageDrawable(getResources().getDrawable(R.drawable.die6));
+
+            //newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
+            btn6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(state6)//获取Button状态
+                    {
+                        case EMPTY:
+                            dialogEmpty();
+                            break;
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate6,state6,nameofproject6,description6, needdays6,nowdays6);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state6,nameofproject6,description6);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
+
+                }
+            });
+
+            //第7个按钮
+            if(state7==INUSE)
+            {
+                if(nowdays7==needdays7)
+                {
+                    state7=DONE;
+                }
+                //判断是否为完成。
+                Calendar tempdata=newdate7;
+                tempdata.add(Calendar.DAY_OF_MONTH,2);
+                Calendar now=getInstance();
+                now.getTime();
+                if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+                {
+                    state7=DYING;
+                }
+                //判断是否死亡
+            }
+            btn7 = (ImageButton)view.findViewById(R.id.Btn7);
+
+            if(state7==EMPTY)
+                btn7.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state7==INUSE)
+                btn7.setImageDrawable(getResources().getDrawable(R.drawable.flower7));
+            else if(state7==DYING)
+                btn7.setImageDrawable(getResources().getDrawable(R.drawable.die7));
+
+            //newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
+            btn7.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(state7)//获取Button状态
+                    {
+                        case EMPTY:
+                            dialogEmpty();
+                            break;
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate7,state7,nameofproject7,description7, needdays7,nowdays7);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state7,nameofproject7,description7);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
+
+                }
+            });
+
+            //第8个按钮
+            if(state8==INUSE)
+            {
+                if(nowdays8==needdays8)
+                {
+                    state8=DONE;
+                }
+                //判断是否为完成。
+                Calendar tempdata=newdate8;
+                tempdata.add(Calendar.DAY_OF_MONTH,2);
+                Calendar now=getInstance();
+                now.getTime();
+                if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+                {
+                    state8=DYING;
+                }
+                //判断是否死亡
+            }
+            btn8 = (ImageButton)view.findViewById(R.id.Btn8);
+
+            if(state8==EMPTY)
+                btn8.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state8==INUSE)
+                btn8.setImageDrawable(getResources().getDrawable(R.drawable.flower8));
+            else if(state8==DYING)
+                btn8.setImageDrawable(getResources().getDrawable(R.drawable.die8));
+
+            //newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
+            btn8.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(state8)//获取Button状态
+                    {
+                        case EMPTY:
+                            dialogEmpty();
+                            break;
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate8,state8,nameofproject8,description8, needdays8,nowdays8);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state8,nameofproject8,description8);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
+
+                }
+            });
+
+            //第9个按钮
+            if(state9==INUSE)
+            {
+                if(nowdays9==needdays9)
+                {
+                    state9=DONE;
+                }
+                //判断是否为完成。
+                Calendar tempdata=newdate9;
+                tempdata.add(Calendar.DAY_OF_MONTH,2);
+                Calendar now=getInstance();
+                now.getTime();
+                if(now.get(DAY_OF_MONTH)==tempdata.get(DAY_OF_MONTH))
+                {
+                    state9=DYING;
+                }
+                //判断是否死亡
+            }
+            btn9 = (ImageButton)view.findViewById(R.id.Btn9);
+
+            if(state9==EMPTY)
+                btn9.setImageDrawable(getResources().getDrawable(R.drawable.pot));
+            else if(state9==INUSE)
+                btn9.setImageDrawable(getResources().getDrawable(R.drawable.flower9));
+            else if(state9==DYING)
+                btn9.setImageDrawable(getResources().getDrawable(R.drawable.die9));
+
+            //newdate1.getTime();
+            //view = inflater.inflate(R.layout.inside, container, false);
+
+
+            btn9.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch(state9)//获取Button状态
+                    {
+                        case EMPTY:
+                            dialogEmpty();
+                            break;
+                        case DYING:
+                            dialogDying();
+                            break;
+                        case INUSE:
+                            dialogInuse(newdate9,state9,nameofproject9,description9, needdays9,nowdays9);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                        case DONE:
+                            dialogDone(state9,nameofproject9,description9);
+                            //这些参数是前面声明的 用于测试 实质为从数据库获取的该项目的各个信息
+                            break;
+                    }
+
+                }
+            });
+
         }
         else if (mPage == 2) {
 
             view = inflater.inflate(R.layout.outside, container, false);
+
         }
         return view;
     }
@@ -176,7 +682,9 @@ public class PageFragment extends Fragment {
                 final Calendar nowdate= getInstance();
                 nowdate.getTime();
                 nowdate.add(DAY_OF_MONTH,-1);
-
+                int year=nowdate.get(YEAR);
+                int month=nowdate.get(MONTH);
+                int date=nowdate.get(DAY_OF_MONTH);
                 dialog.dismiss();
             }
         });
@@ -213,10 +721,9 @@ public class PageFragment extends Fragment {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void dialogInuse(Calendar newdate, int State, String nameofproject,
-                            String description, int needdays, int nowdays,
-                            String note) {
+                            String description, int needdays, int nowdays) {
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
-        View customDialog = layoutInflater.inflate(R.layout.dialog_inuse, null);
+        final View customDialog = layoutInflater.inflate(R.layout.dialog_inuse, null);
         final Dialog dialog = new AlertDialog.Builder(getActivity()).create();
         dialog.show();
         dialog.getWindow().setContentView(customDialog);
@@ -254,7 +761,10 @@ public class PageFragment extends Fragment {
         Check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nowdate.add(DAY_OF_MONTH,1);//把这个传给数据库作为newdate
+                nowdate.add(DAY_OF_MONTH,1);
+                EditText Note=(EditText)customDialog.findViewById(R.id.Note);
+                String myNote=Note.getText().toString();
+                //把这个传给数据库作为newdate
                 dialog.dismiss();
             }
         });
