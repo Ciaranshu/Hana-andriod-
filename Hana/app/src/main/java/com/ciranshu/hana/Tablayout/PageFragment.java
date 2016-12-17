@@ -60,7 +60,7 @@ public class PageFragment extends Fragment {
 
     //初始变量 用于测试
     //一号小组
-    int state1=INUSE;
+    int state1=EMPTY;
     String nameofproject1="FUCK";
     String description1="FUCKING";
     int needdays1=30;
@@ -712,19 +712,36 @@ public class PageFragment extends Fragment {
                 name=(EditText)customDialog.findViewById(R.id.name_1) ;
                 day=(EditText)customDialog.findViewById(R.id.day_1) ;
                 des=(EditText)customDialog.findViewById(R.id.des_1);
-                String n=name.getText().toString();
-                String d=des.getText().toString();
-                String d1=day.getText().toString();
+                String flowerName=name.getText().toString();
+                String description=des.getText().toString();
+                String needDays=day.getText().toString();
 
-                //上述信息需要写入database对应位置
-                //并且更改按钮状态state1为INUSE
-                //下面为当前日期减一
                 final Calendar nowdate= getInstance();
                 nowdate.getTime();
                 nowdate.add(DAY_OF_MONTH,-1);
                 int year=nowdate.get(YEAR);
                 int month=nowdate.get(MONTH);
                 int date=nowdate.get(DAY_OF_MONTH);
+
+                fdbHelper = new FlowerDatabaseHelper(getActivity(), "userFlower.db", null, 2);
+                SQLiteDatabase fdb = fdbHelper.getWritableDatabase();
+
+                ContentValues values = new ContentValues();
+                values.put("name", flowerName);
+                values.put("year", year);
+                values.put("month", month);
+                values.put("day", date);
+                values.put("needDays", needDays);
+                values.put("nowDays", 0);
+                values.put("is_finished", 1);
+                values.put("description", description);
+                fdb.insert("Flower", null, values);
+
+                state1 = INUSE;
+
+                //上述信息需要写入database对应位置
+                //并且更改按钮状态state1为INUSE
+                //下面为当前日期减一
                 dialog.dismiss();
             }
         });
