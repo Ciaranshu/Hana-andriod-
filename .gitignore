@@ -127,3 +127,6 @@ Hana/.idea/compiler.xml
 *.xml
 Hana/app/src/main/res/layout/activity_register.xml
 *.xml
+*.xml
+Hana/.idea/misc.xml
+*.xml
