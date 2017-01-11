@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1"
+    android:background="@drawable/create_interface">
+
+    <TableRow>
+        <TextView
+            android:layout_height="80sp"
+            android:text=""
+            android:gravity="center"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="项目名称"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/name_1"
+            android:layout_height="wrap_content"/>
+        <!--android:hint="Input the project name"-->
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="项目时长/天"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/day_1"
+            android:layout_height="wrap_content"/>
+        <!--android:hint="Input the frequency"-->
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="事件描述"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/des_1"
+            android:layout_height="wrap_content"/>
+        <!-- android:hint="Input the discription"-->
+    </TableRow>
+
+    <LinearLayout android:weightSum="2">
+        <TextView
+            android:layout_width="40sp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnConfirm"
+            android:text="创建"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="15sp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnCancle"
+            android:text="取消"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="40sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</TableLayout>
